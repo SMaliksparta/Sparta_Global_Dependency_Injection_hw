@@ -10,82 +10,89 @@ namespace AnimalDI
     {
         static void Main(string[] args)
         {
-            //Lion leo = new Lion();
-            //Bear br = new  Bear();
-            //Elephant ele = new Elephant();
-            //Squirrel sq = new Squirrel();
 
-            //leo.Sound();
-            //br.Sound();
-            //ele.Sound();
-            //sq.Sound();
+            leo.Sound();
+            leo.Eat();
+            br.Sound();
+            br.Eat();
+            ele.Sound();
+            ele.Eat();
+            sq.Sound();
+
         }
     }
+
 
     public interface IAnimal
     {
         void Sound();
+        void Eat();
 
     }
 
+
     public class Lion : IAnimal
     {
+        public Lion leo = new Lion();
+
+
         public void Sound()
         {
             Console.WriteLine("ROAR!");
         }
 
-        public void EatZebra()
+        public void Eat()
         {
             Console.WriteLine("Eating zebra");
         }
 
-       
     }
 
     public class Elephant : IAnimal
     {
+        Elephant ele = new Elephant();
+
         public void Sound()
         {
             Console.WriteLine("Hurrrrreererrrreeeerrrrrrr");
         }
 
-        public void EatFruit()
+        public void Eat()
         {
             Console.WriteLine("Eating Fruit");
         }
 
-        
     }
     public class Bear : IAnimal
     {
+        Bear br = new Bear();
+
         public void Sound()
         {
             Console.WriteLine("GRRRROOOOOOWWLLL");
         }
 
-        public void EatFish()
+        public void Eat()
         {
             Console.WriteLine("Eating Fish");
         }
 
-        
     }
     public class Squirrel : IAnimal
     {
+        Squirrel sq = new Squirrel();
+
         public void Sound()
         {
             Console.WriteLine(" Snip Snip");
         }
 
-        public void EatFish()
+        public void Eat()
         {
             Console.WriteLine("Eating Nuts");
         }
 
-        
     }
-
     // Main class
     public class Animals
     {
@@ -101,9 +108,15 @@ namespace AnimalDI
             _animal.Sound();
         }
 
+        public void Eat()
+        {
+            _animal.Eat();
+        }
+
+
 
     }
+
+}
    
     
-}
-
